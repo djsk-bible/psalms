@@ -1,5 +1,5 @@
 /* 시편 읽기표 오프라인 파일 — 고칠 때마다 VER 숫자를 올려 주세요 */
-var VER="psalm-v16";
+var VER="psalm-v17";
 var FILES=["./","index.html","manifest.webmanifest","icon-192.png","icon-512.png","icon-maskable-512.png","apple-touch-icon.png","favicon-32.png"];
 self.addEventListener("install",function(e){
   e.waitUntil(caches.open(VER).then(function(c){return c.addAll(FILES)}).then(function(){return self.skipWaiting()}));

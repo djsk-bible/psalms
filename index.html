@@ -241,7 +241,7 @@ button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-
 /* 4단계: 설치 안내 */
 .ob{position:fixed;inset:0;z-index:40;overflow:auto;background:linear-gradient(180deg,var(--glow) 0,var(--glow2) 260px,var(--paper) 460px)}
 .ob .obin{max-width:440px;min-height:100%;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding:calc(env(safe-area-inset-top,0px) + 120px) var(--side) calc(env(safe-area-inset-bottom,0px) + 32px)}
-.ob .ic{width:84px;height:84px;border-radius:22px;overflow:hidden;box-shadow:0 10px 24px rgba(224,145,58,.28)}
+.ob .ic{width:84px;height:84px;border-radius:22px;overflow:hidden;box-shadow:0 10px 24px rgba(180,74,22,.28)}
 .ob .ic svg{display:block;width:100%;height:100%}
 .ob .nm{font-size:15px;font-weight:700;color:var(--sub);margin-top:12px}
 .ob h2{margin:34px 0 0;font-size:22px;font-weight:800;letter-spacing:-.6px;line-height:1.4}
@@ -258,6 +258,15 @@ button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-
 .ob .steps div{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700}
 .ob .steps em{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--amber);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ob .prep{margin-top:30px;font-size:15px;color:var(--sub)}
+.ob .wrap{position:relative;margin-top:34px}
+.ob .big{width:112px;height:112px;border-radius:28px;overflow:hidden;box-shadow:0 12px 28px rgba(180,74,22,.32)}
+.ob .big svg{width:100%;height:100%;display:block}
+.ob .badge{position:absolute;right:-10px;top:-10px;width:34px;height:34px;border-radius:50%;background:#3E9B5B;border:3px solid var(--paper);display:flex;align-items:center;justify-content:center}
+.ob .bn{font-size:15px;font-weight:700;margin-top:10px}
+.ob .stps{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:24px;text-align:left}
+.ob .stp{display:flex;align-items:center;gap:10px;font-size:16.5px;font-weight:700}
+.ob .stp em{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--amber);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ob .stp .k{width:34px;height:34px;border-radius:10px;background:var(--sheet);box-shadow:inset 0 0 0 1.4px var(--chipLine);display:flex;align-items:center;justify-content:center}
 .verlab{margin:0 var(--side) 30px;font-size:12px;color:var(--faint)}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -914,7 +923,7 @@ setInterval(tick,30000);
 document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")tick()});
 if(S.plan)autoNext();
 /* ---------- 설치 안내 (4단계) ---------- */
-var APP_VER="v16";
+var APP_VER="v17";
 var UA=navigator.userAgent||"";
 var IS_KAKAO=/KAKAOTALK/i.test(UA);
 var IS_IOS=/iPhone|iPad|iPod/i.test(UA)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
@@ -927,17 +936,17 @@ var installEvt=null,installStarted=false,instWaitDone=false;
 window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();installEvt=e;if(obOpen())drawOb()});
 window.addEventListener("appinstalled",function(){installStarted=true;installEvt=null;if(obOpen())drawOb()});
 setTimeout(function(){instWaitDone=true;if(obOpen())drawOb()},4000);
-var ICON_SVG='<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#E0913A"/><path d="M14 72c11-6 25-6 36 1 11-7 25-7 36-1v7c-11-6-25-6-36 1-11-7-25-7-36-1z" fill="#FFE2BF"/><path d="M14 67c11-6 25-6 36 1v5c-11-7-25-7-36-1z" fill="#fff"/><path d="M50 68c11-7 25-7 36-1v5c-11-6-25-6-36 1z" fill="#fff"/><g transform="translate(50 46) scale(.72) translate(-50 -52)"><path d="M50 80V48" stroke="#fff" stroke-width="6.5" stroke-linecap="round"/><path d="M50 52C50 36 38 26 20 26c0 17 12 26 30 26z" fill="#FFE2BF"/><path d="M50 46c0-13 10-20 28-20 0 13-10 20-28 20z" fill="#fff"/></g></svg>';
+var ICON_SVG='<svg aria-hidden="true" viewBox="0 0 100 100"><defs><linearGradient id="gpz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EE9440"/><stop offset="1" stop-color="#B44A16"/></linearGradient><filter id="spz" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.2" stdDeviation="1.2" flood-color="#6B2E05" flood-opacity=".35"/></filter></defs><rect width="100" height="100" fill="url(#gpz)"/><g transform="translate(50 42) scale(.8) translate(-50 -53)" filter="url(#spz)"><path d="M14 72c11-6 25-6 36 1 11-7 25-7 36-1v7c-11-6-25-6-36 1-11-7-25-7-36-1z" fill="#FFE2BF"/><path d="M14 67c11-6 25-6 36 1v5c-11-7-25-7-36-1z" fill="#fff"/><path d="M50 68c11-7 25-7 36-1v5c-11-6-25-6-36 1z" fill="#fff"/><g transform="translate(50 46) scale(.72) translate(-50 -52)"><path d="M50 80V48" stroke="#fff" stroke-width="6.5" stroke-linecap="round"/><path d="M50 52C50 36 38 26 20 26c0 17 12 26 30 26z" fill="#FFE2BF"/><path d="M50 46c0-13 10-20 28-20 0 13-10 20-28 20z" fill="#fff"/></g></g><text x="50" y="86.5" text-anchor="middle" font-family="Inter" font-weight="800" font-size="12.5" letter-spacing="1.6" fill="#fff" filter="url(#spz)">PSALMS</text></svg>';
 function obIc(n,s){return '<svg width="'+(s||20)+'" height="'+(s||20)+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+n+'</svg>'}
 var IC_SHARE=obIc('<path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>'),IC_PLUS=obIc('<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/>'),
   IC_UP=obIc('<path d="M7 17L17 7M9 7h8v8"/>'),IC_DL=obIc('<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>'),IC_DOTS=obIc('<circle cx="5" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="19" cy="12" r="1.3" fill="currentColor"/>'),
-  IC_VDOTS=obIc('<circle cx="12" cy="5" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="19" r="1.3" fill="currentColor"/>'),IC_OK=obIc('<path d="M5 12.5l4.5 4.5L19 7.5"/>',30);
+  IC_VDOTS=obIc('<circle cx="12" cy="5" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="19" r="1.3" fill="currentColor"/>'),IC_OK='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',IC_X=obIc('<path d="M6 6l12 12M18 6L6 18"/>',18);
 var obEl=null,obForce=false;
 function obOpen(){return !!(obEl&&document.body.contains(obEl))}
 function head(){return '<div class="ic">'+ICON_SVG+'</div><div class="nm">시편 읽기표</div>'}
 function obBody(){
   if(IS_STANDALONE) return head()+'<h2>이미 설치되어 있어요</h2><p class="pp">홈 화면의 새싹 아이콘으로 열면 돼요</p><button type="button" class="later" data-ob="close">닫기</button>';
-  if(installStarted) return '<div class="chk" style="color:var(--amber)">'+IC_OK+'</div><h2>설치하고 있어요</h2><p class="pp">이 창은 닫고, 새싹 아이콘으로<br>열어 주세요</p><p class="sm">아이콘이 안 보이면 앱스 화면에서 찾아 주세요</p><button type="button" class="later" data-ob="close">알겠어요</button>';
+  if(installStarted) return '<h2 style="margin-top:0">설치가 끝났어요</h2><p class="pp">이제 앱으로 열어 주세요</p><div class="wrap"><div class="big">'+ICON_SVG+'</div><div class="badge">'+IC_OK+'</div></div><div class="bn">시편 읽기표</div><div class="stps"><div class="stp"><em>1</em>이 인터넷 창 닫기 <span class="k">'+IC_X+'</span></div><div class="stp"><em>2</em>휴대폰 화면에서 이 아이콘 누르기</div></div><p class="sm">아이콘이 안 보이면 앱스 화면에서 찾아 주세요</p><button type="button" class="later" data-ob="close">알겠어요</button>';
   if(IS_IOS){
     if(IS_KAKAO) return head()+'<h2>사파리로 열어 주세요</h2><p class="pp">카카오톡 안에서는 설치가 안 되고<br>기록이 사라질 수 있어요</p><div class="steps"><div><em>1</em>오른쪽 아래 '+IC_DOTS+' 누르기</div><div><em>2</em>Safari로 열기</div></div><p class="sm">안 되면 <button type="button" data-ob="copy">주소 복사하기</button></p><button type="button" class="later" data-ob="close">그냥 여기서 볼게요</button>';
     return head()+'<h2>홈 화면에 추가해요</h2><p class="pp">아래 두 개만 눌러 주세요</p><div class="pair"><span class="k">'+IC_SHARE+'</span>공유<span class="ar">›</span><span class="k">'+IC_PLUS+'</span>홈 화면에 추가</div><p class="sm">공유 버튼은 화면 아래(또는 주소창 옆)에 있어요</p><button type="button" class="later" data-ob="close">나중에 할게요</button>';
