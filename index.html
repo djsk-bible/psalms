@@ -271,7 +271,8 @@ button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-
 .verlab{margin:0 var(--side) 30px;font-size:12px;color:var(--faint)}
 
 /* 300일 성경통독 */
-.wkr{font-size:12.5px;color:var(--sub);white-space:nowrap}.wkr b{color:var(--amberD);font-weight:800}
+.lrow{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.wkr{font-size:12.5px;color:var(--sub);white-space:nowrap;line-height:1.2;padding-bottom:2px;margin-bottom:-2px;border-bottom:1px solid var(--chipLine)}.wkr b{color:var(--amberD);font-weight:800}
 .thr{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;align-self:stretch;gap:4px}
 .ln{display:flex;justify-content:center;align-items:center;gap:4px;margin-top:14px;font-size:13px}
 .ln button{display:flex;align-items:center;gap:3px;padding:6px 10px;color:var(--sub);font-weight:600}
@@ -525,14 +526,14 @@ function mainView(){
   t+='<section class="today">';
   if(r.phase==="read"){
     var n=r.to-r.from+1,got=range(r.from,r.to).filter(has).length;
-    t+='<div class="th"><div><div class="lbl">'+SPR+'오늘 읽을 말씀</div>'+h2(r.from,r.to)+'</div><div class="thr"><span class="wkr">이번 주 <b>'+weekPs()+'편</b></span><div class="cnt"><b>'+got+'</b> / '+n+'편 읽음</div></div></div>';
+    t+='<div class="lrow"><div class="lbl">'+SPR+'오늘 읽을 말씀</div><span class="wkr">이번 주 <b>'+weekPs()+'편</b></span></div><div class="th"><div>'+h2(r.from,r.to)+'</div><div class="cnt"><b>'+got+'</b> / '+n+'편 읽음</div></div>';
     t+=(S.hint?'':'<div class="tip">읽은 편의 번호를 누르세요</div>')+chips(range(r.from,r.to));
     if(sug) t+='<div class="sug" role="group"><span>'+fmtList(sug)+'도 읽으셨나요?</span><button type="button" class="no" id="sugNo">아니요</button><button type="button" class="yes" id="sugYes">함께 표시</button></div>';
     var canUndo=S.allMark&&S.allMark.date===ymd(r.t)&&S.allMark.added.some(has);
     t+='<div class="btnrow">'+(r.todayDone?'<span class="all done">'+CHK+'오늘 분량을 다 읽었어요</span>'+(canUndo?'<div><button type="button" class="undo" id="undoAll">되돌리기</button></div>':''):'<button type="button" class="all" id="all">'+CHK+'모두 읽었어요</button>')+'</div>';
   }else if(r.phase==="rest"){
     var nr=nextRead(r.t),lab=diff(r.t,nr)===1?"내일":mdw(nr);
-    t+='<div class="th"><div><div class="lbl">'+SPR+lab+' 읽을 말씀</div>'+h2(r.from,r.to)+'</div><div class="thr"><span class="wkr">이번 주 <b>'+weekPs()+'편</b></span></div></div>';
+    t+='<div class="lrow"><div class="lbl">'+SPR+lab+' 읽을 말씀</div><span class="wkr">이번 주 <b>'+weekPs()+'편</b></span></div><div class="th"><div>'+h2(r.from,r.to)+'</div></div>';
     t+='<p class="note">오늘은 읽을 분량이 없어요.<br>편히 쉬어 가세요.</p>';
   }else if(r.phase==="before"){
     t+='<div class="th"><div><div class="lbl">'+SPR+mdw(r.start)+'부터 시작해요</div>'+h2(r.from,r.to)+'</div></div>';
@@ -783,7 +784,20 @@ function setCheck(k,on){var i=S.checks.indexOf(k),d=ymd(today());if(!S.wlog)S.wl
   if(on&&i<0){S.checks.push(k);S.hint=1;S.wlog[d]=(S.wlog[d]||0)+1;S.cdate[k]=d}
   if(!on&&i>=0){S.checks.splice(i,1);var c=S.cdate[k];if(c&&S.wlog[c]){S.wlog[c]--;if(!S.wlog[c])delete S.wlog[c]}delete S.cdate[k]}
   var cut=ymd(add(today(),-60));Object.keys(S.wlog).forEach(function(x){if(x<cut)delete S.wlog[x]})}
-function weekPs(){var t=today(),m=monOf(t),n=0;for(var d=m;diff(d,t)>=0;d=add(d,1))n+=S.wlog&&S.wlog[ymd(d)]||0;return n}
+/* 이번 주 편수: 월요일~일요일 분량 중 체크한 편 (계획이 바뀌기 전 날은 그날 체크한 수) */
+function weekPs(){
+  var t=today(),m=monOf(t),p=S.plan,n=0,lo=0,hi=0;
+  function wl(d){return diff(d,t)>=0&&S.wlog?S.wlog[ymd(d)]||0:0}
+  if(!p)return 0;
+  if(p.mode!=="date"){for(var j=0;j<7;j++)n+=wl(add(m,j));return n}
+  var st=parse(p.start),off=p.offset||0,pace=p.pace,total=Math.max(0,Math.ceil((150-off)/pace));
+  for(var i=0;i<7;i++){var d=add(m,i);
+    if(diff(st,d)<0){n+=wl(d);continue}
+    if(!isRead(d))continue;var nSeg=countRead(st,d);if(nSeg<1||nSeg>total)continue;
+    var a=off+(nSeg-1)*pace+1,b=Math.min(off+nSeg*pace,150);if(!lo||a<lo)lo=a;if(b>hi)hi=b}
+  if(lo)for(var k=lo;k<=hi;k++)if(has(k))n++;
+  return n;
+}
 
 function paceSheet(){
   var cur=S.plan.pace,val=cur;
@@ -1046,7 +1060,7 @@ setInterval(tick,30000);
 document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")tick()});
 if(S.plan)autoNext();
 /* ---------- 설치 안내 (4단계) ---------- */
-var APP_VER="v18";
+var APP_VER="v19";
 var UA=navigator.userAgent||"";
 var IS_KAKAO=/KAKAOTALK/i.test(UA);
 var IS_IOS=/iPhone|iPad|iPod/i.test(UA)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
