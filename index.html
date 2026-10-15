@@ -137,6 +137,7 @@ button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-
 .seg button{flex:1;height:40px;border-radius:999px;font-size:14.5px;font-weight:700;color:var(--sub)}
 .seg button.on{background:var(--sheet);color:var(--ink);box-shadow:0 2px 6px rgba(150,100,50,.15)}
 .q2{margin:16px var(--side) 0;font-size:16px;font-weight:700}
+.sdesc{margin:8px var(--side) 0;font-size:13.5px;color:var(--sub);line-height:1.5}
 .danger{margin:28px var(--side) 40px;font-size:16px;color:var(--sub);font-weight:600;text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
 /* 시작화면 */
 .st .hero{padding-top:28px}
@@ -269,6 +270,45 @@ button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-
 .ob .stp .k{width:34px;height:34px;border-radius:10px;background:var(--sheet);box-shadow:inset 0 0 0 1.4px var(--chipLine);display:flex;align-items:center;justify-content:center}
 .verlab{margin:0 var(--side) 30px;font-size:12px;color:var(--faint)}
 
+/* 300일 성경통독 */
+.wkr{font-size:12.5px;color:var(--sub);white-space:nowrap}.wkr b{color:var(--amberD);font-weight:800}
+.thr{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;align-self:stretch;gap:4px}
+.ln{display:flex;justify-content:center;align-items:center;gap:4px;margin-top:14px;font-size:13px}
+.ln button{display:flex;align-items:center;gap:3px;padding:6px 10px;color:var(--sub);font-weight:600}
+.ln .bar{width:1px;height:12px;background:var(--chipLine)}
+.bs{margin:40px var(--side) 0;padding-top:26px;border-top:1px solid var(--line)}
+.bs .hh{display:flex;justify-content:space-between;align-items:center}
+.bs .hh h3{margin:0;font-size:17px;font-weight:800;letter-spacing:-.4px}
+.bs .hh button{display:flex;align-items:center;gap:2px;font-size:13.5px;color:var(--sub);font-weight:600;padding:6px 0 6px 8px}
+.bs .it{display:flex;align-items:center;gap:14px;margin-top:12px}
+.bs .ic{width:46px;height:46px;border-radius:14px;background:var(--soft);color:var(--amberD);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bs .tx{flex:1;min-width:0}.bs .tx small{display:block;font-size:12.5px;color:var(--sub);font-weight:600}
+.bs .tx b{display:block;font-size:18px;font-weight:800;letter-spacing:-.4px;margin-top:1px;word-break:keep-all;line-height:1.35}
+.bs .cc{width:46px;height:46px;border-radius:50%;flex-shrink:0;box-shadow:inset 0 0 0 1.5px var(--chipLine);background:var(--sheet);color:var(--faint);display:flex;align-items:center;justify-content:center}
+.bs .cc.on{background:var(--amber);color:#fff;box-shadow:none}
+.bs .wk{margin-top:16px;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--sub)}
+.bs .wk .bar{flex:1;height:5px;border-radius:9px;background:var(--track);overflow:hidden}.bs .wk .bar i{display:block;height:100%;background:var(--amber);border-radius:9px}
+.bs .wk b{color:var(--ink);font-weight:800}
+.tgnone{font-size:14.5px;color:var(--sub);margin:14px 0 0;text-align:center}
+.tgp .bk h1 small{font-size:15px;color:var(--sub);font-weight:600;margin-left:4px}
+.tgp .wn{display:flex;align-items:center;margin:14px var(--side) 0;background:var(--sheet);border-radius:16px;padding:6px;box-shadow:inset 0 0 0 1px var(--line)}
+.tgp .wn>button:not(.c){width:44px;height:44px;font-size:24px;color:var(--amberD);flex-shrink:0}
+.tgp .wn .c{flex:1;text-align:center}.tgp .wn .c b{display:block;font-size:17px;font-weight:800}.tgp .wn .c span{font-size:12.5px;color:var(--sub)}
+.tgp .sm2{margin:16px var(--side) 0;display:flex;justify-content:space-between;align-items:baseline}.tgp .sm2 span{font-size:14px;color:var(--sub)}
+.tgp .sm2 b{font-size:22px;font-weight:800;color:var(--amberD)}.tgp .sm2 b small{font-size:14px;color:var(--sub);font-weight:600}
+.tgp .tl{margin:10px var(--side) 0;background:var(--sheet);border-radius:18px;padding:6px 16px;box-shadow:inset 0 0 0 1px var(--line)}
+.tgp .tl .r{display:flex;align-items:center;gap:12px;position:relative;padding:11px 0;width:100%;text-align:left}
+.tgp .tl .r:before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:var(--track)}
+.tgp .tl .r:first-child:before{top:50%}.tgp .tl .r:last-child:before{bottom:50%}.tgp .tl .r:only-child:before{display:none}
+.tgp .tl .dot{width:26px;height:26px;border-radius:50%;background:var(--sheet);box-shadow:inset 0 0 0 2px var(--chipLine);position:relative;z-index:1;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff}
+.tgp .tl .r.done .dot{background:var(--amber);box-shadow:none}
+.tgp .tl .r.today .dot{box-shadow:inset 0 0 0 2.5px var(--amber),0 0 0 4px var(--soft)}
+.tgp .tl .r.today.done .dot{box-shadow:0 0 0 4px var(--soft)}
+.tgp .tl .dd{width:54px;font-size:16px;font-weight:800;flex-shrink:0}.tgp .tl .dd small{font-size:12.5px;color:var(--sub);font-weight:600;margin-left:3px}
+.tgp .tl .r.today .dd,.tgp .tl .r.today .dd small{color:var(--amberD)}
+.tgp .tl .rg{flex:1;min-width:0;font-size:15.5px;font-weight:600;word-break:keep-all}.tgp .tl .r.today .rg{font-weight:800}
+.tgp .tl .n{font-size:12.5px;color:var(--faint);flex-shrink:0}.tgp .tl .r.done .n{color:var(--amberD);font-weight:700}
+.tgp .tip2{margin:12px var(--side) 30px;text-align:center;font-size:13.5px;color:var(--sub)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -336,14 +376,17 @@ function normalize(o){
   out.anchor=o.anchor&&validDate(o.anchor.date)&&intIn(o.anchor.from,1,151)?{date:o.anchor.date,from:Number(o.anchor.from)}:null;
   out.ask=o.ask&&validDate(o.ask.date)?{date:o.ask.date}:null;
   out.allMark=o.allMark&&validDate(o.allMark.date)?{date:o.allMark.date,added:cleanList(o.allMark.added)||[]}:null;
-  out.fake=intIn(o.fake,-3650,3650)?Number(o.fake):0;out.obDone=o.obDone?1:0;
+  out.fake=intIn(o.fake,-3650,3650)?Number(o.fake):0;out.obDone=o.obDone?1:0;out.hint=o.hint?1:0;
+  out.tg={off:o.tg&&o.tg.off?1:0,d:{}};if(o.tg&&o.tg.d&&typeof o.tg.d==="object")Object.keys(o.tg.d).forEach(function(k){if(validDate(k)&&o.tg.d[k])out.tg.d[k]=1});
+  out.wlog={};if(o.wlog&&typeof o.wlog==="object")Object.keys(o.wlog).forEach(function(k){if(validDate(k)&&intIn(o.wlog[k],1,150))out.wlog[k]=Number(o.wlog[k])});
+  out.cdate={};if(o.cdate&&typeof o.cdate==="object")Object.keys(o.cdate).forEach(function(k){if(intIn(k,1,150)&&validDate(o.cdate[k]))out.cdate[k]=o.cdate[k]});
   if(o.ms&&typeof o.ms==="object"){out.ms={};[25,50,75].forEach(function(th){if(typeof o.ms[th]==="string")out.ms[th]=o.ms[th]})}
   return out;
 }
 var RAW=load(),BROKEN=false;
 S=RAW?normalize(RAW):blank();
 if(!S){BROKEN=true;try{localStorage.setItem(KEY+"-broken-"+Date.now(),JSON.stringify(RAW))}catch(e){}S=blank()}
-if(!S.history)S.history=[];if(S.doneOn===undefined)S.doneOn=null;if(!S.ms){S.ms={};var p0=(S.checks||[]).length/150*100;[25,50,75].forEach(function(th){if(p0>=th)S.ms[th]="past"})}if(!S.since&&S.plan)S.since=S.plan.cycleStart;
+if(!S.history)S.history=[];if(S.doneOn===undefined)S.doneOn=null;if(!S.ms){S.ms={};var p0=(S.checks||[]).length/150*100;[25,50,75].forEach(function(th){if(p0>=th)S.ms[th]="past"})}if(!S.since&&S.plan)S.since=S.plan.cycleStart;if(!S.tg)S.tg={off:0,d:{}};if(!S.wlog)S.wlog={};if(!S.cdate)S.cdate={};if(S.checks.length||S.done)S.hint=1;
 var AWAY=S.last&&S.plan?diff(parse(S.last),today())>=3:false;
 S.last=ymd(today());save();
 
@@ -388,7 +431,7 @@ function compute(){
 function finishCycle(missed,startDate,endDate){
   var p=S.plan;
   S.history.push({n:S.done+1,start:p.cycleStart,end:endDate,pace:p.pace,missed:missed||[]});
-  S.done++;S.checks=[];S.doneOn=null;S.anchor=null;S.ask=null;S.ms={};
+  S.done++;S.checks=[];S.cdate={};S.doneOn=null;S.anchor=null;S.ask=null;S.ms={};
   p.start=startDate;p.cycleStart=startDate;p.offset=0;delete p.overEnd;open50=null;save();
 }
 function msInit(){S.ms={};var p=S.checks.length/150*100;[25,50,75].forEach(function(th){if(p>=th)S.ms[th]="past"})}
@@ -482,14 +525,14 @@ function mainView(){
   t+='<section class="today">';
   if(r.phase==="read"){
     var n=r.to-r.from+1,got=range(r.from,r.to).filter(has).length;
-    t+='<div class="th"><div><div class="lbl">'+SPR+'오늘 읽을 말씀</div>'+h2(r.from,r.to)+'</div><div class="cnt"><b>'+got+'</b> / '+n+'편 읽음</div></div>';
-    t+='<div class="tip">읽은 편의 번호를 누르세요</div>'+chips(range(r.from,r.to));
+    t+='<div class="th"><div><div class="lbl">'+SPR+'오늘 읽을 말씀</div>'+h2(r.from,r.to)+'</div><div class="thr"><span class="wkr">이번 주 <b>'+weekPs()+'편</b></span><div class="cnt"><b>'+got+'</b> / '+n+'편 읽음</div></div></div>';
+    t+=(S.hint?'':'<div class="tip">읽은 편의 번호를 누르세요</div>')+chips(range(r.from,r.to));
     if(sug) t+='<div class="sug" role="group"><span>'+fmtList(sug)+'도 읽으셨나요?</span><button type="button" class="no" id="sugNo">아니요</button><button type="button" class="yes" id="sugYes">함께 표시</button></div>';
     var canUndo=S.allMark&&S.allMark.date===ymd(r.t)&&S.allMark.added.some(has);
     t+='<div class="btnrow">'+(r.todayDone?'<span class="all done">'+CHK+'오늘 분량을 다 읽었어요</span>'+(canUndo?'<div><button type="button" class="undo" id="undoAll">되돌리기</button></div>':''):'<button type="button" class="all" id="all">'+CHK+'모두 읽었어요</button>')+'</div>';
   }else if(r.phase==="rest"){
     var nr=nextRead(r.t),lab=diff(r.t,nr)===1?"내일":mdw(nr);
-    t+='<div class="th"><div><div class="lbl">'+SPR+lab+' 읽을 말씀</div>'+h2(r.from,r.to)+'</div></div>';
+    t+='<div class="th"><div><div class="lbl">'+SPR+lab+' 읽을 말씀</div>'+h2(r.from,r.to)+'</div><div class="thr"><span class="wkr">이번 주 <b>'+weekPs()+'편</b></span></div></div>';
     t+='<p class="note">오늘은 읽을 분량이 없어요.<br>편히 쉬어 가세요.</p>';
   }else if(r.phase==="before"){
     t+='<div class="th"><div><div class="lbl">'+SPR+mdw(r.start)+'부터 시작해요</div>'+h2(r.from,r.to)+'</div></div>';
@@ -504,11 +547,14 @@ function mainView(){
     t+='<p class="note">시편 150편을 모두 체크했어요.<br><b>'+(diff(r.t,nx)===1?'내일':mdw(nx))+'부터</b> '+(c+1)+'독째가 시작돼요.</p>';
     t+='<div class="btnrow"><button type="button" class="all" id="nextNow">오늘 바로 시작하기</button></div>';
   }
+  var links='<button type="button" id="board">'+CHV+'이번 1독 체크표</button><span class="bar"></span><button type="button" id="hist">'+CHV+(S.done?'<b>'+S.done+'독</b>&nbsp;완료 · 지난 기록':'지난 기록')+'</button>';
+  if(tgOn())t+='<div class="ln">'+links+'</div>';
   t+='</section>';
+  if(tgOn())t+=tgSection();
   var mk=ymd(r.t).slice(0,7);
   if(S.since&&diff(parse(S.since),r.t)>=30&&(!S.lastBackup||diff(parse(S.lastBackup),r.t)>=30)&&S.nag!==mk)
     t+='<div class="nag"><span>한 달에 한 번, 기록을 백업해 주세요</span><button type="button" id="nagGo">백업하기</button><button type="button" id="nagX" aria-label="닫기">✕</button></div>';
-  t+='<nav class="foot"><button type="button" id="board">'+CHV+'이번 1독 체크표</button><span class="bar"></span><button type="button" id="hist">'+CHV+(S.done?'<b>'+S.done+'독</b>&nbsp;완료 · 지난 기록':'지난 기록')+'</button></nav>';
+  if(tgOn())t+='<div class="spacer"></div>';else t+='<nav class="foot">'+links+'</nav>';
   return t;
 }
 
@@ -536,6 +582,7 @@ function settingsView(){
   t+='<div class="sec">'+SPRs+'읽기 계획</div>';
   t+='<button type="button" class="srow" id="setPace"><span>하루 편수</span><span class="v">'+p.pace+'편 ›</span></button>';
   t+='<button type="button" class="srow" id="setStart"><span>시작일</span><span class="v">'+mdw(parse(p.cycleStart))+' ›</span></button>';
+  t+='<div class="sec">'+SPRs+'300일 성경통독</div><div class="seg"><button type="button" data-tg="1" class="'+(tgOn()?'on':'')+'" aria-pressed="'+tgOn()+'">보기</button><button type="button" data-tg="0" class="'+(tgOn()?'':'on')+'" aria-pressed="'+!tgOn()+'">끄기</button></div><p class="sdesc">교회 300일 성경통독(1년)을 메인 화면에 보여 줘요</p>';
   t+='<div class="sec">'+SPRs+'체크 안 한 날이 있으면</div><div class="rad">'+
     '<button type="button" data-mode="date" class="'+(p.mode==="date"?'on':'')+'" aria-pressed="'+(p.mode==="date")+'"><i></i><div><b>날짜대로 넘어가기</b><span>날짜에 맞는 분량을 보여 줘요. 마치는 날은 그대로예요.</span></div></button>'+
     '<button type="button" data-mode="continue" class="'+(p.mode==="continue"?'on':'')+'" aria-pressed="'+(p.mode==="continue")+'"><i></i><div><b>이어서 읽기</b><span>아직 체크 안 된 곳부터 이어서 보여 줘요. 마치는 날이 늦춰질 수 있어요.</span></div></button></div>';
@@ -568,6 +615,7 @@ function renderView(){
   else if(view==="settings") app.innerHTML=settingsView();
   else if(view==="board") app.innerHTML=boardView();
   else if(view==="hist") app.innerHTML=histView();
+  else if(view==="tg") app.innerHTML=tgView();
   else app.innerHTML=mainView();
 }
 function go(v){
@@ -731,7 +779,11 @@ function sheet(html,bind){
   w.addEventListener("click",function(e){if(e.target===w)close()});
   bind(w.querySelector(".sheet"),close);
 }
-function setCheck(k,on){var i=S.checks.indexOf(k);if(on&&i<0)S.checks.push(k);if(!on&&i>=0)S.checks.splice(i,1)}
+function setCheck(k,on){var i=S.checks.indexOf(k),d=ymd(today());if(!S.wlog)S.wlog={};if(!S.cdate)S.cdate={};
+  if(on&&i<0){S.checks.push(k);S.hint=1;S.wlog[d]=(S.wlog[d]||0)+1;S.cdate[k]=d}
+  if(!on&&i>=0){S.checks.splice(i,1);var c=S.cdate[k];if(c&&S.wlog[c]){S.wlog[c]--;if(!S.wlog[c])delete S.wlog[c]}delete S.cdate[k]}
+  var cut=ymd(add(today(),-60));Object.keys(S.wlog).forEach(function(x){if(x<cut)delete S.wlog[x]})}
+function weekPs(){var t=today(),m=monOf(t),n=0;for(var d=m;diff(d,t)>=0;d=add(d,1))n+=S.wlog&&S.wlog[ymd(d)]||0;return n}
 
 function paceSheet(){
   var cur=S.plan.pace,val=cur;
@@ -815,6 +867,7 @@ app.addEventListener("click",function(e){
     if(b.id==="restart"){restartSheet();return}
     if(b.dataset.mode){if(S.plan.mode!==b.dataset.mode){var m=b.dataset.mode;rebase(function(p){p.mode=m})}render();return}
     if(b.dataset.sun){var sv=b.dataset.sun==="1";if(S.plan.sunRest!==sv)rebase(function(p){p.sunRest=sv});render();return}
+    if(b.dataset.tg){if(!S.tg)S.tg={off:0,d:{}};S.tg.off=b.dataset.tg==="1"?0:1;save();render();return}
     if(b.id==="howInstall"){if(HOSTED)showOb(true);else toast("실제 주소에 올린 뒤에 설치할 수 있어요");return}
     return;
   }
@@ -828,6 +881,11 @@ app.addEventListener("click",function(e){
       save();render();return}
     if(b.id==="bYes"){bSug.forEach(function(x){setCheck(x,true)});afterCheck();var n=bSug.length;bSug=null;save();render();toast(n+"편을 함께 표시했어요");return}
     if(b.id==="bNo"){bSug=null;bNo=true;render();return}
+    return;
+  }
+  if(view==="tg"){
+    if(b.dataset.tk){var tk=b.dataset.tk;tgSet(tk,!tgHas(tk));save();render();return}
+    if(b.dataset.ws){var st2=+b.dataset.ws;tgWs=st2===0?tgStartWeek():add(tgWs,st2*7);render();return}
     return;
   }
   if(view==="hist"){bSug=null;bNo=false;
@@ -852,6 +910,8 @@ app.addEventListener("click",function(e){
     (S.allMark&&S.allMark.added||[]).forEach(function(x){setCheck(x,false)});S.allMark=null;afterCheck();save();render();return;
   }
   if(b.id==="gear"){go("settings");return}
+  if(b.id==="tgChk"){var tk2=b.dataset.key,on3=!tgHas(tk2);tgSet(tk2,on3);save();render();return}
+  if(b.id==="tgBoard"){tgWs=null;go("tg");return}
   if(b.id==="board"||b.id==="ringGo"){boardIdx=null;bSug=null;bNo=false;go("board");return}
   if(b.id==="hist"){go("hist");return}
   if(b.id==="nextOver"){overSheet(compute());return}
@@ -914,6 +974,69 @@ function testSheet(){
     });
   });
 }
+/* ---------- 300일 성경통독 (서광통독 v28 일정과 같음) ---------- */
+var TG_B=["창세기","출애굽기","레위기","민수기","신명기","여호수아","사사기","룻기","사무엘상","사무엘하","열왕기상","열왕기하","역대상","역대하","에스라","느헤미야","에스더","욥기","시편","잠언","전도서","아가","이사야","예레미야","예레미야애가","에스겔","다니엘","호세아","요엘","아모스","오바댜","요나","미가","나훔","하박국","스바냐","학개","스가랴","말라기","마태복음","마가복음","누가복음","요한복음","사도행전","로마서","고린도전서","고린도후서","갈라디아서","에베소서","빌립보서","골로새서","데살로니가전서","데살로니가후서","디모데전서","디모데후서","디도서","빌레몬서","히브리서","야고보서","베드로전서","베드로후서","요한일서","요한이서","요한삼서","유다서","요한계시록"];
+var TG_C=[50,40,27,36,34,24,21,4,31,24,22,25,29,36,10,13,10,42,150,31,12,8,66,52,5,48,12,14,3,9,1,4,7,3,3,3,2,14,4,28,16,24,21,28,16,16,13,6,6,4,4,5,3,6,4,3,1,13,5,5,3,5,1,1,1,22];
+var TG_P=[[[0,1,2]],[[0,3,5]],[[0,6,8]],[[0,9,11]],[[0,12,17]],[[0,18,20]],[[0,21,25]],[[0,26,31]],[[0,32,36]],[[0,37,41]],[[0,42,45]],[[0,46,50]],[[1,1,6]],[[1,7,11]],[[1,12,13]],[[1,14,18]],[[1,19,24]],[[1,25,31]],[[1,32,34]],[[1,35,40]],[[2,1,7]],[[2,8,10]],[[2,11,17]],[[2,18,22]],[[2,23,27]],[[3,1,4]],[[3,5,10]],[[3,11,14]],[[3,15,19]],[[3,20,25]],[[3,26,27]],[[3,28,31]],[[3,32,36]],[[4,1,4]],[[4,5,11]],[[4,12,15]],[[4,16,20]],[[4,21,26]],[[4,27,30]],[[4,31,34]],[[5,1,5]],[[5,6,12]],[[5,13,17]],[[5,18,19]],[[5,20,24]],[[6,1,2]],[[6,3,5]],[[6,6,8]],[[6,9,12]],[[6,13,16]],[[6,17,18]],[[6,19,21]],[[7,1,4]],[[8,1,3]],[[8,4,7]],[[8,8,12]],[[8,13,15]],[[8,16,17]],[[8,18,20]],[[8,21,23]],[[8,24,27]],[[8,28,29]],[[8,30,31]],[[9,1,5]],[[9,6,7]],[[9,8,10]],[[9,11,12]],[[9,13,15]],[[9,16,18]],[[9,19,20]],[[9,21,24]],[[10,1,2]],[[10,3,4]],[[10,5,8]],[[10,9,11]],[[10,12,14]],[[10,15,16]],[[10,17,19]],[[10,20,22]],[[11,1,3]],[[11,4,5]],[[11,6,8]],[[11,9,10]],[[11,11,13]],[[11,14,17]],[[11,18,20]],[[11,21,23]],[[11,24,25]],[[12,1,3]],[[12,4,6]],[[12,7,8]],[[12,9,10]],[[12,11,12]],[[12,13,16]],[[12,17,20]],[[12,21,24]],[[12,25,29]],[[13,1,4]],[[13,5,9]],[[13,10,13]],[[13,14,16]],[[13,17,20]],[[13,21,22]],[[13,23,24]],[[13,25,28]],[[13,29,32]],[[13,33,36]],[[14,1,3]],[[14,4,6]],[[14,7,10]],[[15,1,3]],[[15,4,7]],[[15,8,13]],[[16,1,4]],[[16,5,10]],[[17,1,3]],[[17,4,7]],[[17,8,10]],[[17,11,14]],[[17,15,17]],[[17,18,19]],[[17,20,21]],[[17,22,24]],[[17,25,27]],[[17,28,31]],[[17,32,34]],[[17,35,37]],[[17,38,39]],[[17,40,42]],[[18,1,7]],[[18,8,17]],[[18,18,27]],[[18,28,32]],[[18,33,38]],[[18,39,49]],[[18,50,59]],[[18,60,65]],[[18,66,72]],[[18,73,79]],[[18,80,89]],[[18,90,100]],[[18,101,106]],[[18,107,116]],[[18,117,119]],[[18,120,137]],[[18,138,145]],[[18,146,150]],[[19,1,5]],[[19,6,9]],[[19,10,15]],[[19,16,20]],[[19,21,24]],[[19,25,31]],[[20,1,6]],[[20,7,12]],[[21,1,4]],[[21,5,8]],[[22,1,5]],[[22,6,8]],[[22,9,12]],[[22,13,16]],[[22,17,23]],[[22,24,27]],[[22,28,31]],[[22,32,35]],[[22,36,39]],[[22,40,44]],[[22,45,48]],[[22,49,51]],[[22,52,57]],[[22,58,62]],[[22,63,66]],[[23,1,3]],[[23,4,6]],[[23,7,10]],[[23,11,14]],[[23,15,17]],[[23,18,20]],[[23,21,23]],[[23,24,25]],[[23,26,29]],[[23,30,33]],[[23,34,38]],[[23,39,44]],[[23,45,49]],[[23,50,52]],[[24,1,2]],[[24,3,5]],[[25,1,3]],[[25,4,7]],[[25,8,11]],[[25,12,16]],[[25,17,19]],[[25,20,24]],[[25,25,28]],[[25,29,32]],[[25,33,34]],[[25,35,36]],[[25,37,39]],[[25,40,43]],[[25,44,48]],[[26,1,3]],[[26,4,6]],[[26,7,9]],[[26,10,12]],[[27,1,3]],[[27,4,10]],[[27,11,14]],[[28,1,3]],[[29,1,6]],[[29,7,9]],[[30,1,1]],[[31,1,4]],[[32,1,7]],[[33,1,3]],[[34,1,3]],[[35,1,3]],[[36,1,2]],[[37,1,6]],[[37,7,9]],[[37,10,14]],[[38,1,4]],[[39,1,4]],[[39,5,7]],[[39,8,10]],[[39,11,12]],[[39,13,15]],[[39,16,20]],[[39,21,25]],[[39,26,28]],[[40,1,4]],[[40,5,7]],[[40,8,10]],[[40,11,13]],[[40,14,16]],[[41,1,3]],[[41,4,6]],[[41,7,8]],[[41,9,11]],[[41,12,14]],[[41,15,16]],[[41,17,19]],[[41,20,21]],[[41,22,24]],[[42,1,3]],[[42,4,6]],[[42,7,9]],[[42,10,13]],[[42,14,17]],[[42,18,19]],[[42,20,21]],[[43,1,2]],[[43,3,5]],[[43,6,9]],[[43,10,12]],[[43,13,15]],[[43,16,18]],[[43,19,21]],[[43,22,26]],[[43,27,28]],[[44,1,3]],[[44,4,6]],[[44,7,8]],[[44,9,11]],[[44,12,16]],[[45,1,4]],[[45,5,7]],[[45,8,10]],[[45,11,14]],[[45,15,16]],[[46,1,3]],[[46,4,7]],[[46,8,10]],[[46,11,13]],[[47,1,3]],[[47,4,6]],[[48,1,3]],[[48,4,6]],[[49,1,4]],[[50,1,4]],[[51,1,5]],[[52,1,3]],[[53,1,6]],[[54,1,4]],[[55,1,3],[56,1,1]],[[57,1,4]],[[57,5,9]],[[57,10,13]],[[58,1,5]],[[59,1,5]],[[60,1,3]],[[61,1,5]],[[62,1,1],[63,1,1],[64,1,1]],[[65,1,3]],[[65,4,5]],[[65,6,11]],[[65,12,14]],[[65,15,16]],[[65,17,18]],[[65,19,22]]];
+
+var TG_STARTS=[];for(var ty=2026;ty<=2050;ty++){var t1=new Date(ty,0,1);t1.setDate(1+(8-t1.getDay())%7);TG_STARTS.push(ymd(t1))}
+function tgEnd(st){return ymd(add(parse(st),49*7+5))}
+function tgCyc(k){var y=k.slice(0,4);for(var i=0;i<TG_STARTS.length;i++)if(TG_STARTS[i].slice(0,4)===y)return i;return -1}
+/* 그날이 300일 중 몇 번째인지 (없으면 -1) */
+function tgIdx(k){var i=tgCyc(k);if(i<0)return -1;var df=diff(parse(TG_STARTS[i]),parse(k));if(df<0||df>=350||df%7===6)return -1;return Math.floor(df/7)*6+df%7}
+function tgUnit(b){return b===18?"편":"장"}
+function tgText(r){return r.map(function(x){var b=x[0],a=x[1],z=x[2];if(TG_C[b]===1)return TG_B[b];return TG_B[b]+" "+a+(z>a?"–"+z:"")+tgUnit(b)}).join(", ")}
+function tgN(r){var n=0;r.forEach(function(x){n+=x[2]-x[1]+1});return n}
+function tgOn(){return !(S.tg&&S.tg.off)}
+function tgHas(k){return !!(S.tg&&S.tg.d&&S.tg.d[k])}
+function tgSet(k,on){if(!S.tg)S.tg={off:0,d:{}};if(!S.tg.d)S.tg.d={};if(on)S.tg.d[k]=1;else delete S.tg.d[k]}
+function monOf(d){return add(d,-((d.getDay()+6)%7))}
+/* 메인에 보여 줄 하루 */
+function tgToday(){
+  var t=today(),k=ymd(t),i=tgIdx(k);
+  if(i>=0)return {lab:"오늘 읽을 말씀",key:k,r:TG_P[i]};
+  var k1=ymd(add(t,1));if(t.getDay()===0&&tgIdx(k1)>=0)return {lab:"다음 읽을 말씀 · "+mdw(add(t,1)),key:k1,r:TG_P[tgIdx(k1)]};
+  var ci=tgCyc(k);if(ci<0)return null;
+  var st=TG_STARTS[ci];
+  if(k<st)return {lab:mdw(parse(st))+"부터 새롭게 읽어요",key:st,r:TG_P[0],pre:1};
+  if(k>tgEnd(st)){
+    var left=[],n=0;for(var j=0;j<300;j++){var kk=ymd(add(parse(st),Math.floor(j/6)*7+j%6));if(!tgHas(kk)){left.push(kk);n+=tgN(TG_P[j])}}
+    if(left.length)return {lab:"올해 남은 말씀 "+n+"장 · "+md(parse(left[0]))+" 분량",key:left[0],r:TG_P[tgIdx(left[0])]};
+    if(ci+1<TG_STARTS.length){var ns=TG_STARTS[ci+1];return {lab:"새해 시작 · "+mdw(parse(ns))+" 미리 읽기",key:ns,r:TG_P[0],pre:1}}
+  }
+  return null;
+}
+/* 한 주(월~토) 합계 */
+function tgWeek(mon){var tot=0,rd=0,days=[];for(var j=0;j<6;j++){var d=add(mon,j),k=ymd(d),i=tgIdx(k);if(i<0)continue;var n=tgN(TG_P[i]);tot+=n;if(tgHas(k))rd+=n;days.push({d:d,k:k,r:TG_P[i],n:n})}return {tot:tot,rd:rd,days:days}}
+var BOOKI='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5C5.5 5 9 5 12 7c3-2 6.5-2 9-.5V18c-2.5-1.5-6-1.5-9 .5-3-2-6.5-2-9-.5z"/><path d="M12 7v11.5"/></svg>';
+var CHKB='<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function tgSection(){
+  var it=tgToday(),t='<section class="bs"><div class="hh"><h3>300일 성경통독</h3><button type="button" id="tgBoard">통독표'+CHV+'</button></div>';
+  if(it){var on=tgHas(it.key);
+    t+='<div class="it"><span class="ic">'+BOOKI+'</span><div class="tx"><small>'+esc(it.lab)+'</small><b>'+esc(tgText(it.r))+'</b></div><button type="button" class="cc'+(on?' on':'')+'" id="tgChk" data-key="'+it.key+'" aria-pressed="'+on+'" aria-label="'+(on?'읽음 표시 지우기':'읽었어요')+'">'+CHKB+'</button></div>';
+  }else t+='<p class="tgnone">지금은 통독 일정이 없어요</p>';
+  var w=tgWeek(monOf(today()));
+  if(w.tot)t+='<div class="wk"><span>이번 주</span><span class="bar"><i style="width:'+Math.round(w.rd/w.tot*100)+'%"></i></span><span><b>'+w.rd+'</b> / '+w.tot+'장</span></div>';
+  return t+'</section>';
+}
+var tgWs=null;
+function tgStartWeek(){var t=today(),m=monOf(t);if(tgWeek(m).tot)return m;for(var j=1;j<=7;j++){var d=add(t,j);if(tgIdx(ymd(d))>=0)return monOf(d)}return m}
+function tgView(){
+  if(!tgWs)tgWs=tgStartWeek();
+  var t=today(),k0=ymd(t),m0=monOf(t),thu=add(tgWs,3),nth=["첫째","둘째","셋째","넷째","다섯째"][Math.floor((thu.getDate()-1)/7)];
+  var d6=add(tgWs,5),span=tgWs.getMonth()===d6.getMonth()?tgWs.getDate()+"일 ~ "+d6.getDate()+"일":md(tgWs)+" ~ "+md(d6);
+  var ix=-1;for(var j=0;j<6&&ix<0;j++)ix=tgIdx(ymd(add(tgWs,j)));
+  var w=tgWeek(tgWs);
+  var h='<div class="pg tgp"><div class="bk"><button type="button" class="bkb" aria-label="뒤로">'+BACK+'</button><h1>300일 성경통독표<small>(1년)</small></h1></div>';
+  h+='<div class="wn"><button type="button" data-ws="-1" aria-label="지난주">‹</button><button type="button" class="c" data-ws="0" aria-label="이번 주로"><b>'+(thu.getMonth()+1)+'월 '+nth+' 주</b><span>'+(ix>=0?(Math.floor(ix/6)+1)+'주차 · ':'')+span+(diff(m0,tgWs)===0?' · 이번 주':'')+'</span></button><button type="button" data-ws="1" aria-label="다음 주">›</button></div>';
+  if(!w.tot){h+='<p class="tgnone" style="margin:30px var(--side)">이 주에는 통독 일정이 없어요</p></div>';return h}
+  h+='<div class="sm2"><span>'+(diff(m0,tgWs)===0?'이번 주':'이 주')+' 읽은 장</span><b>'+w.rd+'<small>장 / '+w.tot+'장</small></b></div><div class="tl">';
+  w.days.forEach(function(x){var on=tgHas(x.k),isT=x.k===k0;
+    h+='<button type="button" class="r'+(on?' done':'')+(isT?' today':'')+'" data-tk="'+x.k+'" aria-pressed="'+on+'"><span class="dot">'+(on?CHK:'')+'</span><span class="dd">'+x.d.getDate()+'<small>'+(isT?'오늘':DOW[x.d.getDay()])+'</small></span><span class="rg">'+esc(tgText(x.r))+'</span><span class="n">'+x.n+'장</span></button>'});
+  h+='</div><p class="tip2">읽은 날을 누르면 체크돼요</p></div>';
+  return h;
+}
+
 var secretN=0,secretT=0;
 
 /* 날짜가 바뀌면 다시 그리기 */
@@ -923,7 +1046,7 @@ setInterval(tick,30000);
 document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")tick()});
 if(S.plan)autoNext();
 /* ---------- 설치 안내 (4단계) ---------- */
-var APP_VER="v17";
+var APP_VER="v18";
 var UA=navigator.userAgent||"";
 var IS_KAKAO=/KAKAOTALK/i.test(UA);
 var IS_IOS=/iPhone|iPad|iPod/i.test(UA)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
