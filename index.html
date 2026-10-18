@@ -40,7 +40,7 @@ html,body{min-height:100%}
 body{background:var(--paper);color:var(--ink);font-family:var(--sys);letter-spacing:-.2px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
 button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-radius:999px}
-.app{max-width:440px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;
+.app{max-width:440px;margin:0 auto;min-height:calc(100vh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;
   background:linear-gradient(180deg,var(--glow) 0,var(--glow2) 210px,var(--paper) 370px)}
 /* 머리 */
 .hd{display:flex;justify-content:space-between;align-items:center;padding:24px var(--side) 0}
@@ -341,7 +341,7 @@ button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-
 .hr h2.tg{font-size:20px;word-break:keep-all}
 .c2{display:block;font-size:13px;color:var(--amberD);font-weight:700;margin-top:2px}
 .p1 .hr{padding-right:78px}
-.rib{position:absolute;right:0;top:-1px;width:66px;height:94px;padding-top:22px;background:var(--amber);color:#fff;font-size:13.5px;font-weight:800;display:flex;flex-direction:column;align-items:center;gap:2px;clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);border-radius:0!important}
+.rib{position:absolute;right:0;top:-1px;width:66px;height:86px;padding-top:20px;background:var(--amber);color:#fff;font-size:13.5px;font-weight:800;display:flex;flex-direction:column;align-items:center;gap:2px;clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);border-radius:0!important}
 .rib span{white-space:nowrap}
 .p1 .bd{padding-left:42px}.p1.solo .bd{padding-left:0}
 .p1 .big{gap:5px;margin-top:14px}
@@ -369,9 +369,9 @@ button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-
 .gcell .cap{position:absolute;top:100%;margin-top:4px}
 .p1 .grid:has(.gcell){margin-bottom:20px}
 /* v21 읽기 화면 (서광통독 구성) */
-:root{--rbg:#F1E7DB;--rtx:#33261D;--rvn:#9B5616}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--rbg:#2A211B;--rtx:#CDC2B6;--rvn:#F0B26B}}
-:root[data-theme="dark"]{--rbg:#2A211B;--rtx:#CDC2B6;--rvn:#F0B26B}
+:root{--rbg:#F1E7DB;--rtx:#403329;--rvn:#9B5616}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--rbg:#2A211B;--rtx:#BDB1A5;--rvn:#F0B26B}}
+:root[data-theme="dark"]{--rbg:#2A211B;--rtx:#BDB1A5;--rvn:#F0B26B}
 .app.plain{background:var(--rbg)}
 .vlb{font-size:13.5px;color:var(--sub);font-weight:700;margin:18px 0 8px}
 .sheet .seg{margin:0}
@@ -1280,7 +1280,7 @@ setInterval(tick,30000);
 document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")tick()});
 if(S.plan)autoNext();
 /* ---------- 설치 안내 (4단계) ---------- */
-var APP_VER="v24";
+var APP_VER="v25";
 var UA=navigator.userAgent||"";
 var IS_KAKAO=/KAKAOTALK/i.test(UA);
 var IS_IOS=/iPhone|iPad|iPod/i.test(UA)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
