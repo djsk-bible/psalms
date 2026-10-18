@@ -19,29 +19,30 @@ html{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
 body{margin:0}
 /* 한 장으로 흐르는 화면: 위는 따뜻한 빛(진도), 아래는 오늘 읽을 말씀. 상자 없이 여백과 새싹 제목으로 나눔 */
 :root{
-  --paper:#FCF8F3; --glow:#F5DCBD; --glow2:#F9E8D3;
-  --ink:#33261D; --sub:#8C7B6C; --faint:#B9AA9B; --line:#EFE2D2;
-  --amber:#E0913A; --amberD:#B5661C; --soft:#FBEBD8; --track:#EFD9BF;
-  --chipLine:#E6D9CA; --chipBg:transparent; --sheet:#FFFCF8; --toast:#33261D; --toastFg:#FFF6EC; --toastAc:#FFC98A;
+  --paper:#FCF8F3; --glow:#F5DCBD; --glow2:#F9E8D3; --pend:#FBF5EE;
+  --ink:#33261D; --sub:#8C7B6C; --faint:#B9AA9B; --line:#DFC8AE;
+  --amber:#E0913A; --amberD:#B5661C; --soft:#FBEBD8; --track:#E8CFB0;
+  --chipLine:#D9C4AC; --chipBg:transparent; --sheet:#FFFCF8; --toast:#33261D; --toastFg:#FFF6EC; --toastAc:#FFC98A;
   --sys:-apple-system,BlinkMacSystemFont,system-ui,"Apple SD Gothic Neo","Noto Sans KR","Noto Sans CJK KR",sans-serif;
   --side:clamp(20px,9vw,40px); --ring:136px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#1E1814; --glow:#3A2817; --glow2:#2A1F17; --ink:#F3E9DF; --sub:#B8A796; --faint:#8C7D70; --line:#3A2F27;
+  --paper:#1E1814; --pend:#1E1814; --glow:#3A2817; --glow2:#2A1F17; --ink:#F3E9DF; --sub:#B8A796; --faint:#8C7D70; --line:#3A2F27;
   --amber:#E39A48; --amberD:#F0B26B; --soft:#3A2A1C; --track:#3B2F25; --chipLine:#4A3C31; --sheet:#28201A;
   --toast:#F3E9DF; --toastFg:#2A1F17; --toastAc:#B5661C; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --paper:#1E1814; --glow:#3A2817; --glow2:#2A1F17; --ink:#F3E9DF; --sub:#B8A796; --faint:#8C7D70; --line:#3A2F27;
+  --paper:#1E1814; --pend:#1E1814; --glow:#3A2817; --glow2:#2A1F17; --ink:#F3E9DF; --sub:#B8A796; --faint:#8C7D70; --line:#3A2F27;
   --amber:#E39A48; --amberD:#F0B26B; --soft:#3A2A1C; --track:#3B2F25; --chipLine:#4A3C31; --sheet:#28201A;
   --toast:#F3E9DF; --toastFg:#2A1F17; --toastAc:#B5661C; color-scheme:dark}
 @media (max-width:380px){:root{--ring:118px}}
 *{box-sizing:border-box}
-html,body{min-height:100%}
+html{height:100%}
+body{min-height:100%;display:flex;flex-direction:column}
 body{background:var(--paper);color:var(--ink);font-family:var(--sys);letter-spacing:-.2px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
 button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-radius:999px}
-.app{max-width:440px;margin:0 auto;min-height:calc(100vh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;
-  background:linear-gradient(180deg,var(--glow) 0,var(--glow2) 210px,var(--paper) 370px)}
+.app{width:100%;max-width:440px;margin:0 auto;flex:1 0 auto;display:flex;flex-direction:column;
+  background:linear-gradient(180deg,var(--glow) 0,var(--glow2) 260px,var(--pend) 460px)}
 /* 머리 */
 .hd{display:flex;justify-content:space-between;align-items:center;padding:24px var(--side) 0}
 .hd h1{margin:0;font-size:22px;font-weight:800;letter-spacing:-.6px}
@@ -1280,7 +1281,7 @@ setInterval(tick,30000);
 document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")tick()});
 if(S.plan)autoNext();
 /* ---------- 설치 안내 (4단계) ---------- */
-var APP_VER="v25";
+var APP_VER="v26";
 var UA=navigator.userAgent||"";
 var IS_KAKAO=/KAKAOTALK/i.test(UA);
 var IS_IOS=/iPhone|iPad|iPod/i.test(UA)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);

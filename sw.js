@@ -1,5 +1,5 @@
 /* 시편 읽기표 오프라인 파일 — 고칠 때마다 index.html의 APP_VER, version.json의 v, 이 CACHE 번호를 같이 올려 주세요 */
-const CACHE = 'psalm-v25';
+const CACHE = 'psalm-v26';
 const FILES = ['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./icon-maskable-512.png','./apple-touch-icon.png','./favicon-32.png'];
 // 설치할 때 브라우저 캐시를 건너뛰고 새 파일을 받아요 (깃허브 10분 캐시 때문에 옛 파일이 저장되는 것을 막아요)
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE)
