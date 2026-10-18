@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F5DCBD">
+<meta name="theme-color" content="#EFCB9F">
 <meta name="description" content="시편 150편 읽기 체크">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -19,7 +19,7 @@ html{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
 body{margin:0}
 /* 한 장으로 흐르는 화면: 위는 따뜻한 빛(진도), 아래는 오늘 읽을 말씀. 상자 없이 여백과 새싹 제목으로 나눔 */
 :root{
-  --paper:#FCF8F3; --glow:#F5DCBD; --glow2:#F9E8D3; --pend:#FBF5EE;
+  --paper:#FCF8F3; --glow:#EFCB9F; --glow2:#F5DDC0; --pend:#FBF5EE;
   --ink:#33261D; --sub:#8C7B6C; --faint:#B9AA9B; --line:#DFC8AE;
   --amber:#E0913A; --amberD:#B5661C; --soft:#FBEBD8; --track:#E8CFB0;
   --chipLine:#D9C4AC; --chipBg:transparent; --sheet:#FFFCF8; --toast:#33261D; --toastFg:#FFF6EC; --toastAc:#FFC98A;
@@ -317,9 +317,9 @@ button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-
 .tgp .tl .n{font-size:12.5px;color:var(--faint);flex-shrink:0}.tgp .tl .r.done .n{color:var(--amberD);font-weight:700}
 .tgp .tip2{margin:12px var(--side) 30px;text-align:center;font-size:13.5px;color:var(--sub)}
 /* v21 메인 */
-:root{--date:#5B5048;--num:#EBC79C;--pill:#E3D3C0}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--date:#D8CBBE;--num:#7A5A3A;--pill:#4A3C31}}
-:root[data-theme="dark"]{--date:#D8CBBE;--num:#7A5A3A;--pill:#4A3C31}
+:root{--date:#5B5048;--num:#EBC79C;--pill:#E0B98D;--line2:#EDE1D3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--date:#D8CBBE;--num:#7A5A3A;--pill:#4A3C31;--line2:#30271F}}
+:root[data-theme="dark"]{--date:#D8CBBE;--num:#7A5A3A;--pill:#4A3C31;--line2:#30271F}
 .hd2{display:flex;justify-content:space-between;align-items:center;padding:20px var(--side) 0}
 .dpill{display:inline-flex;align-items:center;gap:6px;padding:5px 13px 5px 9px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--pill);color:var(--date);font-size:15px;font-weight:700}
 .msg2{margin:14px var(--side) 0;font-size:20px;font-weight:700;line-height:1.45;letter-spacing:-.5px;white-space:pre-line;text-wrap:balance}
@@ -332,7 +332,7 @@ button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-
 .jr .tr>span{position:absolute;top:-30px;margin-left:-17px;line-height:0}
 .jr .dts{display:flex;justify-content:space-between;font-size:12px;color:var(--sub)}
 .p1,.p2{position:relative;margin:18px var(--side) 0;border-top:1px solid var(--line);padding:20px 0}
-.p2{margin-top:0;border-bottom:1px solid var(--line)}
+.p2{margin-top:0;border-top-color:var(--line2);border-bottom:1px solid var(--line2)}
 .hr{display:flex;align-items:center;gap:14px}
 .nm{width:28px;flex-shrink:0;font-size:26px;font-weight:700;color:var(--num);font-family:Georgia,"Times New Roman",serif;font-style:italic;text-align:center}
 .hr .x{flex:1;min-width:0}
@@ -346,13 +346,14 @@ button:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-
 .rib span{white-space:nowrap}
 .p1 .bd{padding-left:42px}.p1.solo .bd{padding-left:0}
 .p1 .big{gap:5px;margin-top:14px}
+.p1 .ch:not(.on):not(.ms):not(.td){box-shadow:inset 0 0 0 1px var(--chipLine)}.p1 .grid .ch{width:86%;justify-self:center}
 .p1 .grid{margin-top:14px}
 .p1 .tip{margin-top:14px}
 .p1 .btnrow{margin-top:14px}
 .p1 .all{height:36px;padding:0 16px;font-size:13.5px;font-weight:800}
 .cc{width:46px;height:46px;border-radius:50%;flex-shrink:0;box-shadow:inset 0 0 0 1.5px var(--chipLine);background:var(--sheet);color:var(--faint);display:flex;align-items:center;justify-content:center}
 .cc.on{background:var(--amber);color:#fff;box-shadow:none}
-.ftn{margin:auto var(--side) 0;padding:16px 0 30px;border-top:1px solid var(--line);display:flex;justify-content:space-around;text-align:center;font-size:12.5px;color:var(--sub)}
+.ftn{margin:auto var(--side) 0;padding:16px 0 30px;display:flex;justify-content:space-around;text-align:center;font-size:12.5px;color:var(--sub)}
 .ftn>*{display:flex;flex-direction:column;align-items:center;min-width:80px;padding:4px 0;color:var(--sub);font-size:12.5px}
 .ftn b{display:block;font-size:19px;color:var(--ink);font-weight:800;margin-bottom:2px}.ftn b small{font-size:13px;font-weight:700;margin-left:1px}
 .nag{margin-top:18px}
@@ -592,7 +593,7 @@ function range(a,b){var x=[];for(var k=a;k<=b;k++)x.push(k);return x}
 function chips(list){
   var n=list.length,h="";
   function one(k){return '<button type="button" class="ch'+(has(k)?' on':'')+'" data-k="'+k+'" aria-pressed="'+has(k)+'" aria-label="시편 '+k+'편">'+k+'</button>'}
-  if(n<=15) return '<div class="big" style="grid-template-columns:repeat('+Math.min(n,5)+',minmax(0,44px))">'+list.map(one).join("")+'</div>';
+  if(n<=15) return '<div class="big" style="grid-template-columns:repeat('+Math.min(n,5)+',minmax(0,38px))">'+list.map(one).join("")+'</div>';
   if(n<=50) return '<div class="grid">'+list.map(one).join("")+'</div>';
   var groups=[];for(var i=0;i<n;i+=50) groups.push(list.slice(i,i+50));
   if(open50===null){open50=0;for(var g=0;g<groups.length;g++){if(groups[g].some(function(k){return !has(k)})){open50=g;break}}}
@@ -726,7 +727,7 @@ function setTheme(t){S.theme=t==="light"||t==="dark"?t:"auto";save();applyTheme(
 function applyTheme(){var r=document.documentElement,t=S.theme;
   if(t==="light"||t==="dark")r.setAttribute("data-theme",t);else r.removeAttribute("data-theme");
   var dk=t==="dark"||(t!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",dk?"#3A2817":"#F5DCBD")}
+  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",dk?"#3A2817":"#EFCB9F")}
 function fontSheet(){
   function body(){return '<div class="pkh"><h3>화면 설정</h3><button type="button" id="cx">닫기</button></div><div class="vlb">글자 크기</div><div class="fsg">'+FS.map(function(n,i){return '<button type="button" data-fs="'+i+'" class="'+(i===fsIdx()?'on':'')+'" style="font-size:'+(13+i*2)+'px">가</button>'}).join("")+'</div><div class="vlb">화면</div>'+themeSeg()}
   sheet(body(),function(s,close){
@@ -1281,7 +1282,7 @@ setInterval(tick,30000);
 document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")tick()});
 if(S.plan)autoNext();
 /* ---------- 설치 안내 (4단계) ---------- */
-var APP_VER="v26";
+var APP_VER="v27";
 var UA=navigator.userAgent||"";
 var IS_KAKAO=/KAKAOTALK/i.test(UA);
 var IS_IOS=/iPhone|iPad|iPod/i.test(UA)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
